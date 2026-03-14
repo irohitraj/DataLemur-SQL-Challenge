@@ -1,0 +1,7 @@
+with cte as (
+SELECT candidate_id, skill FROM candidates 
+where skill in ('Python','Tableau', 'PostgreSQL')
+)
+
+select candidate_id from cte group by candidate_id 
+HAVING count(*) = 3
