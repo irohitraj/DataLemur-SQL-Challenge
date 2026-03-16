@@ -1,0 +1,6 @@
+SELECT sender_id, count(message_id)
+FROM messages
+where EXTRACT(year from sent_date) = 2022 and 
+EXTRACT(month from sent_date) = 08
+group by sender_id
+order by count(message_id) DESC limit 2
