@@ -1,0 +1,9 @@
+with cte as (
+SELECT company_id, title, description, count(*) as same_posting
+FROM job_listings
+group by company_id, title, description
+order by company_id
+)
+
+select count(distinct company_id) from cte 
+where same_posting >1
