@@ -1,0 +1,12 @@
+with cte as (
+SELECT user_id, signup_date, signup_action, action_date
+FROM emails
+join 
+texts
+on emails.email_id = texts.email_id
+where signup_action = 'Confirmed'
+)
+
+select user_id 
+FROM cte
+WHERE EXTRACT(DAY FROM (action_date - signup_date)) = 1
