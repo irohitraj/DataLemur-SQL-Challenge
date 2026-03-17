@@ -1,0 +1,6 @@
+SELECT app_id, 
+round(100.0* sum(case when event_type = 'click' then 1 ELSE 0 END)/
+sum(case when event_type = 'impression' then 1 ELSE 0 END), 2) as ctr
+FROM events
+where EXTRACT (year from timestamp) = 2022
+group by app_id
