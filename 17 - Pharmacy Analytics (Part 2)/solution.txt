@@ -1,0 +1,21 @@
+-- with cte as (
+-- SELECT manufacturer, drug, sum(cogs) - sum(total_sales) as total_loss
+-- FROM pharmacy_sales
+-- group by manufacturer, drug
+-- having sum(cogs) - sum(total_sales) >0
+-- order by manufacturer
+-- )
+
+-- select manufacturer, count(*) as drug_count , sum(total_loss) as total_loss
+-- from cte
+-- group by manufacturer
+-- order by total_loss desc
+
+## solution 2
+
+SELECT manufacturer, count(drug) as drug_count,
+sum(cogs - total_sales) as total_loss
+from pharmacy_sales
+where cogs>total_sales
+group by manufacturer
+order by total_loss desc
