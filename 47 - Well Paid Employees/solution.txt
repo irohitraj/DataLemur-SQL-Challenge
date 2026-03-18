@@ -1,0 +1,12 @@
+with cte as (
+SELECT e1.employee_id, e1.name, e1.salary as emp_salary,
+e2.employee_id as mgr_id, e2.salary as mgr_salary
+FROM employee e1
+inner JOIN
+employee e2
+on e1.manager_id = e2.employee_id
+where e1.manager_id is not null
+)
+
+select employee_id, name as employee_name from cte
+where emp_salary > mgr_salary
