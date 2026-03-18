@@ -1,0 +1,18 @@
+with cte as (
+SELECT emp.employee_id, 
+COALESCE(COUNT(DISTINCT q.query_id), 0) as unique_queries
+FROM 
+employees emp
+left join 
+queries as q
+on 
+emp.employee_id = q.employee_id
+and q.query_starttime >= '2023-07-01T00:00:00'
+AND q.query_starttime < '2023-10-01T00:00:00'
+group by emp.employee_id
+)
+
+select unique_queries, count(employee_id) as employee_count
+from cte
+group by unique_queries
+order by unique_queries
