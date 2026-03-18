@@ -1,0 +1,4 @@
+SELECT 
+ROUND(
+sum(order_occurrences*item_count)::numeric / sum(order_occurrences),1)
+FROM items_per_order
