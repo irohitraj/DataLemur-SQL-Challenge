@@ -1,0 +1,15 @@
+-- select max(salary) as second_highest_salary from employee
+-- where salary <
+-- (
+-- SELECT max(salary)
+-- FROM employee
+-- ) 
+
+-- sol 2
+SELECT salary
+FROM (
+    SELECT salary,
+           DENSE_RANK() OVER (ORDER BY salary desc) AS rnk
+    FROM employee
+) t
+WHERE rnk = 2;
