@@ -1,0 +1,13 @@
+with cte as(
+SELECT department_id, name,salary,
+DENSE_RANK()
+over(PARTITION by department_id order by salary desc ) as rnk
+FROM employee
+)
+
+select department_name, name,salary 
+from cte
+join department
+on cte.department_id = department.department_id
+where rnk<4
+order by department_name, salary desc, name
