@@ -1,18 +1,18 @@
 # DataLemur SQL Challenge Solutions
 
-Personal solutions for [DataLemur](https://datalemur.com/) SQL interview-style problems. Each folder is one challenge: problem text (Markdown) plus the query I used to solve it.
+Personal solutions for [DataLemur](https://datalemur.com/) SQL interview-style problems. Each folder is one challenge: problem text plus the query I used to solve it.
 
 ## Repository layout
 
 | Item | Description |
 |------|-------------|
-| **One folder per challenge** | Every challenge lives in `NN - Challenge Title`, with `01`–`12` zero-padded so folders sort before `13`–`53` (see table). |
+| **One folder per challenge** | Every challenge lives in `NN - Challenge Title`(see table). |
 | **Problem write-up** | Usually `problem.md`, `NN - problem.md`, or a Markdown file named after the challenge. These mirror the prompt, schema, and examples from the platform. |
-| **Solution** | Typically `solution.sql` or `solution.txt`. Some challenges use a descriptive `.sql` filename instead. |
+| **Solution** | Typically `solution.sql` or `solution.txt`. Some challenges use a descriptive `.sql` filename instead as my notes are also in there. |
 
 ## Challenge index
 
-Sorted by challenge id (`01`–`53`). Leading zeros on `01`–`09` match the folder names so Explorer and GitHub list everything in numeric order.
+Sorted by challenge id (`01`–`53`).
 
 | # | Challenge | Folder |
 |--:|---|---|
